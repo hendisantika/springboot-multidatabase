@@ -1,6 +1,7 @@
 package com.hendisantika.springbootmultidatabase.controller;
 
 import com.hendisantika.springbootmultidatabase.domain.mysql.Category;
+import com.hendisantika.springbootmultidatabase.domain.sqlserver.Country;
 import com.hendisantika.springbootmultidatabase.repository.CategoryRepository;
 import com.hendisantika.springbootmultidatabase.repository.CountryRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -36,6 +37,12 @@ public class TestController {
     @PostMapping(value = "category")
     public ResponseEntity<Category> createCategory(@RequestBody Category domain) {
         categoryRepository.save(domain);
+        return ResponseEntity.ok(domain);
+    }
+
+    @PostMapping(value = "country")
+    public ResponseEntity<Country> createCountry(@RequestBody Country domain) {
+        countryRepository.save(domain);
         return ResponseEntity.ok(domain);
     }
 }
