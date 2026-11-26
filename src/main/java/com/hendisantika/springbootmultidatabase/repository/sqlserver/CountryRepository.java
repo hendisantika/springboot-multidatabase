@@ -1,4 +1,4 @@
-package com.hendisantika.springbootmultidatabase.repository;
+package com.hendisantika.springbootmultidatabase.repository.sqlserver;
 
 import com.hendisantika.springbootmultidatabase.domain.sqlserver.Country;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * Date: 04/02/20
  * Time: 06.46
  */
-@Repository()
+@Repository
 public interface CountryRepository extends JpaRepository<Country, Long> {
 }

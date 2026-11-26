@@ -1,4 +1,4 @@
-package com.hendisantika.springbootmultidatabase.repository;
+package com.hendisantika.springbootmultidatabase.repository.mysql;
 
 import com.hendisantika.springbootmultidatabase.domain.mysql.Category;
 import org.springframework.data.jpa.repository.JpaRepository;

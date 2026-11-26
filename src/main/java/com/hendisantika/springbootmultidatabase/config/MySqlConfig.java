@@ -1,9 +1,9 @@
 package com.hendisantika.springbootmultidatabase.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.jdbc.autoconfigure.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
+import org.springframework.boot.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -13,7 +13,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 /**
@@ -28,7 +28,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "mysqlEntityManagerFactory", transactionManagerRef =
-        "mysqlTransactionManager", basePackages = {"com.hendisantika.springbootmultidatabase.repository"})
+        "mysqlTransactionManager", basePackages = {"com.hendisantika.springbootmultidatabase.repository.mysql"})
 public class MySqlConfig {
     @Primary
     @Bean
@@ -46,7 +46,7 @@ public class MySqlConfig {
     @Primary
     @Bean
     public LocalContainerEntityManagerFactoryBean mysqlEntityManagerFactory(@Qualifier("mysqlDataSource") DataSource hubDataSource, EntityManagerFactoryBuilder builder) {
-        return builder.dataSource(hubDataSource).packages("com.sma.backend.multidb.database.mysql.domain")
+        return builder.dataSource(hubDataSource).packages("com.hendisantika.springbootmultidatabase.domain.mysql")
                 .persistenceUnit("mysql").build();
     }
 

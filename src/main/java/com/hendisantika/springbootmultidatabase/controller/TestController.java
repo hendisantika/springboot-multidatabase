@@ -2,8 +2,8 @@ package com.hendisantika.springbootmultidatabase.controller;
 
 import com.hendisantika.springbootmultidatabase.domain.mysql.Category;
 import com.hendisantika.springbootmultidatabase.domain.sqlserver.Country;
-import com.hendisantika.springbootmultidatabase.repository.CategoryRepository;
-import com.hendisantika.springbootmultidatabase.repository.CountryRepository;
+import com.hendisantika.springbootmultidatabase.repository.mysql.CategoryRepository;
+import com.hendisantika.springbootmultidatabase.repository.sqlserver.CountryRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
